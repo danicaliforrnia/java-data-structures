@@ -16,12 +16,15 @@ public class SingleLinkedList<T> implements LinkedList<T> {
         if (isEmpty()) {
             head = new PointerNode<>(data);
         } else {
-            var current = head;
+            var currentTail = head;
+
             for (int i = 0; i < size - 1; i++) {
-                current = current.getNext();
+                currentTail = currentTail.getNext();
             }
-            current.setNext(new PointerNode<>(data));
+
+            currentTail.setNext(new PointerNode<>(data));
         }
+
         size++;
     }
 
