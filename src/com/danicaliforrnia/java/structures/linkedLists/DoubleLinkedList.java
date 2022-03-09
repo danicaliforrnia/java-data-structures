@@ -12,6 +12,25 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
     }
 
     @Override
+    public T get(int index) {
+        if (isOutOfBounds(index)) {
+            throw new IndexOutOfBoundsException(index);
+        }
+
+        if (index == 0) {
+            return head.getData();
+        }
+
+        var node = head;
+
+        for (int i = 0; i < index; i++) {
+            node = head.getNext();
+        }
+
+        return node.getData();
+    }
+
+    @Override
     public void insert(T data) {
         if (isEmpty()) {
             head = new DoublePointerNode<>(data);
@@ -29,7 +48,7 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
 
     @Override
     public void insert(T data, int index) {
-        if (index > size - 1 || (isEmpty() && index != 0)) {
+        if (isOutOfBounds(index)) {
             throw new IndexOutOfBoundsException(index);
         }
 
@@ -53,16 +72,17 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
                 i++;
             }
 
-            node.setNext(current.getNext());
-            current.setPrevious(node);
             current.getPrevious().setNext(node);
+            node.setPrevious(current.getPrevious());
+            current.setPrevious(node);
+            node.setNext(current);
             size++;
         }
     }
 
     @Override
     public void replace(T data, int index) {
-        if (isEmpty()) {
+        if (isOutOfBounds(index)) {
             throw new IndexOutOfBoundsException(index);
         }
 
@@ -101,10 +121,10 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
             var node = head;
 
             while (!found && node.getNext() != null) {
+                node = node.getNext();
+
                 if (node.getData().equals(data)) {
                     found = true;
-                } else {
-                    node = node.getNext();
                 }
             }
 
@@ -122,7 +142,7 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
 
     @Override
     public void remove(int index) {
-        if (isEmpty()) {
+        if (isOutOfBounds(index)) {
             throw new IndexOutOfBoundsException(index);
         }
 
@@ -153,6 +173,10 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
     @Override
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    private boolean isOutOfBounds(int index) {
+        return index > size - 1 || (isEmpty() && index != 0);
     }
 
     public DoublePointerNode<T> getHead() {

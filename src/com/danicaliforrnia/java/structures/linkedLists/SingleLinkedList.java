@@ -12,6 +12,30 @@ public class SingleLinkedList<T> implements LinkedList<T> {
     }
 
     @Override
+    public T get(int index) {
+        if (isOutOfBounds(index)) {
+            throw new IndexOutOfBoundsException(index);
+        }
+
+        if (index == 0) {
+            return head.getData();
+        }
+
+        var node = head;
+
+        for (int i = 0; i < index; i++) {
+            node = head.getNext();
+        }
+
+        return node.getData();
+    }
+
+    /**
+     * Insert at the tail or head if list is empty. O(1)
+     *
+     * @param data: value to insert
+     */
+    @Override
     public void insert(T data) {
         if (isEmpty()) {
             head = new PointerNode<>(data);
@@ -28,9 +52,15 @@ public class SingleLinkedList<T> implements LinkedList<T> {
         size++;
     }
 
+    /**
+     * Insert at index. O(n)
+     *
+     * @param data:  data to insert
+     * @param index: index where insert
+     */
     @Override
     public void insert(T data, int index) {
-        if (index > size - 1 || (isEmpty() && index != 0)) {
+        if (isOutOfBounds(index)) {
             throw new IndexOutOfBoundsException(index);
         }
 
@@ -59,9 +89,15 @@ public class SingleLinkedList<T> implements LinkedList<T> {
         }
     }
 
+    /**
+     * Replace a value at index. O(n)
+     *
+     * @param data:  data to replace
+     * @param index: index where replace
+     */
     @Override
     public void replace(T data, int index) {
-        if (isEmpty()) {
+        if (isOutOfBounds(index)) {
             throw new IndexOutOfBoundsException(index);
         }
 
@@ -80,6 +116,11 @@ public class SingleLinkedList<T> implements LinkedList<T> {
         }
     }
 
+    /**
+     * Remove first appearance of data. O(n)
+     *
+     * @param data: data to remove
+     */
     @Override
     public void remove(T data) {
         if (isEmpty()) {
@@ -113,9 +154,14 @@ public class SingleLinkedList<T> implements LinkedList<T> {
         }
     }
 
+    /**
+     * Remove at index. O(n)
+     *
+     * @param index: index where remove
+     */
     @Override
     public void remove(int index) {
-        if (isEmpty()) {
+        if (isOutOfBounds(index)) {
             throw new IndexOutOfBoundsException(index);
         }
 
@@ -143,6 +189,10 @@ public class SingleLinkedList<T> implements LinkedList<T> {
     @Override
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    private boolean isOutOfBounds(int index) {
+        return index > size - 1 || (isEmpty() && index != 0);
     }
 
     public PointerNode<T> getHead() {

@@ -2,6 +2,13 @@ package com.danicaliforrnia.java.structures.linkedLists;
 
 public interface LinkedList<T> {
     /**
+     * Retrieve element at index.
+     * @param index: element's index
+     * @return T: element's data
+     */
+    T get(int index);
+
+    /**
      * Insert data at the tail
      * @param data: value to insert
      */
