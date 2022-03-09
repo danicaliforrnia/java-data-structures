@@ -3,44 +3,33 @@ package com.danicaliforrnia.java.structures.linkedLists;
 public class DoubleLinkedListTester {
 
     public static void main(String[] args) {
-        LinkedList<String> doubleLinkedList = new DoubleLinkedList<>();
+        DoubleLinkedList<String> doubleLinkedList = new DoubleLinkedList<>();
 
-        System.out.println("--------Test 1---------");
-        doubleLinkedList.insert("Hello");
+        System.out.println("--------Test 1: Insert---------");
+        doubleLinkedList.insert("hello");
         doubleLinkedList.insert("World2");
         doubleLinkedList.insert("World3");
+        doubleLinkedList.insert("Worldd", 1);
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
+
+        System.out.println("--------Test 2: Replace---------");
         doubleLinkedList.replace("World", 1);
+        doubleLinkedList.replace("Hello", 0);
+        doubleLinkedList.replace("WORLD2", 2);
+        doubleLinkedList.replace("WORLD3", 3);
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
+
+        System.out.println("--------Test 3: Remove---------");
         doubleLinkedList.remove(2);
+        doubleLinkedList.remove("WORLD3");
         System.out.println("size: " + doubleLinkedList.size());
         System.out.println(doubleLinkedList);
 
-        System.out.println("--------Test 2---------");
-        doubleLinkedList.insert("!");
-        System.out.println("size: " + doubleLinkedList.size());
-        System.out.println(doubleLinkedList);
-
-        System.out.println("--------Test 3---------");
-        doubleLinkedList.insert("¡", 0);
-        doubleLinkedList.replace("Hola", 1);
-        doubleLinkedList.replace("Mundo", 2);
-        System.out.println("size: " + doubleLinkedList.size());
-        System.out.println(doubleLinkedList);
-
-        System.out.println("--------Test 4---------");
-        doubleLinkedList.remove(1);
-        doubleLinkedList.remove(0);
-        System.out.println("size: " + doubleLinkedList.size());
-        System.out.println(doubleLinkedList);
-
-        System.out.println("--------Test 5---------");
-        doubleLinkedList.remove("Mundo");
-        doubleLinkedList.remove("!");
-        System.out.println("size: " + doubleLinkedList.size());
-        System.out.println(doubleLinkedList);
-
-        System.out.println("--------Test 6---------");
-        doubleLinkedList.insert("Hello");
-        doubleLinkedList.insert("World");
+        System.out.println("--------Test 4: Get---------");
+        System.out.println(doubleLinkedList.get(0));
+        System.out.println(doubleLinkedList.get(1));
         System.out.println("size: " + doubleLinkedList.size());
         System.out.println(doubleLinkedList);
     }
