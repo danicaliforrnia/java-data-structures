@@ -3,45 +3,46 @@ package com.danicaliforrnia.java.structures.linkedLists;
 public class DoubleLinkedListTester {
 
     public static void main(String[] args) {
-        LinkedList<String> singlyLinkedList = new DoubleLinkedList<>();
+        LinkedList<String> doubleLinkedList = new DoubleLinkedList<>();
 
         System.out.println("--------Test 1---------");
-        singlyLinkedList.insert("Hello");
-        singlyLinkedList.insert("World");
-        singlyLinkedList.insert("World2");
-        singlyLinkedList.remove(2);
-        System.out.println("size: " + singlyLinkedList.size());
-        System.out.println(singlyLinkedList);
+        doubleLinkedList.insert("Hello");
+        doubleLinkedList.insert("World2");
+        doubleLinkedList.insert("World3");
+        doubleLinkedList.replace("World", 1);
+        doubleLinkedList.remove(2);
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
 
         System.out.println("--------Test 2---------");
-        singlyLinkedList.insert("!");
-        System.out.println("size: " + singlyLinkedList.size());
-        System.out.println(singlyLinkedList);
+        doubleLinkedList.insert("!");
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
 
         System.out.println("--------Test 3---------");
-        singlyLinkedList.insert("¡", 0);
-        singlyLinkedList.replace("Hola", 1);
-        singlyLinkedList.replace("Mundo", 2);
-        System.out.println("size: " + singlyLinkedList.size());
-        System.out.println(singlyLinkedList);
+        doubleLinkedList.insert("¡", 0);
+        doubleLinkedList.replace("Hola", 1);
+        doubleLinkedList.replace("Mundo", 2);
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
 
         System.out.println("--------Test 4---------");
-        singlyLinkedList.remove(1);
-        singlyLinkedList.remove(0);
-        System.out.println("size: " + singlyLinkedList.size());
-        System.out.println(singlyLinkedList);
+        doubleLinkedList.remove(1);
+        doubleLinkedList.remove(0);
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
 
         System.out.println("--------Test 5---------");
-        singlyLinkedList.remove("Mundo");
-        singlyLinkedList.remove("!");
-        System.out.println("size: " + singlyLinkedList.size());
-        System.out.println(singlyLinkedList);
+        doubleLinkedList.remove("Mundo");
+        doubleLinkedList.remove("!");
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
 
         System.out.println("--------Test 6---------");
-        singlyLinkedList.insert("Hello");
-        singlyLinkedList.insert("World");
-        System.out.println("size: " + singlyLinkedList.size());
-        System.out.println(singlyLinkedList);
+        doubleLinkedList.insert("Hello");
+        doubleLinkedList.insert("World");
+        System.out.println("size: " + doubleLinkedList.size());
+        System.out.println(doubleLinkedList);
     }
 
 }
