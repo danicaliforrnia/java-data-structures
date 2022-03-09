@@ -1,13 +1,15 @@
 package com.danicaliforrnia.java.structures.linkedLists;
 
-public class LinkedListTester {
+public class SingleLinkedListTester {
 
     public static void main(String[] args) {
-        LinkedList<String> singlyLinkedList = new SinglyLinkedList<>();
+        LinkedList<String> singlyLinkedList = new SingleLinkedList<>();
 
         System.out.println("--------Test 1---------");
         singlyLinkedList.insert("Hello");
         singlyLinkedList.insert("World");
+        singlyLinkedList.insert("World2");
+        singlyLinkedList.remove(2);
         System.out.println("size: " + singlyLinkedList.size());
         System.out.println(singlyLinkedList);
 
@@ -24,13 +26,13 @@ public class LinkedListTester {
         System.out.println(singlyLinkedList);
 
         System.out.println("--------Test 4---------");
-        singlyLinkedList.remove(0);
         singlyLinkedList.remove(1);
+        singlyLinkedList.remove(0);
         System.out.println("size: " + singlyLinkedList.size());
         System.out.println(singlyLinkedList);
 
         System.out.println("--------Test 5---------");
-        singlyLinkedList.remove("Hola");
+        singlyLinkedList.remove("Mundo");
         singlyLinkedList.remove("!");
         System.out.println("size: " + singlyLinkedList.size());
         System.out.println(singlyLinkedList);

@@ -2,11 +2,11 @@ package com.danicaliforrnia.java.structures.linkedLists;
 
 import com.danicaliforrnia.java.structures.nodes.PointerNode;
 
-public class SinglyLinkedList<T> implements LinkedList<T> {
+public class SingleLinkedList<T> implements LinkedList<T> {
     private PointerNode<T> head;
     private int size;
 
-    public SinglyLinkedList() {
+    public SingleLinkedList() {
         head = null;
         size = 0;
     }
@@ -84,19 +84,30 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
         }
 
         if (head.getData().equals(data)) {
-            head = head.getNext();
-        } else {
-            var previous = head;
-
-            while (previous.getNext().getData().equals(data)) {
-                previous = previous.getNext();
+            if (head.getNext() != null) {
+                head = head.getNext();
+            } else {
+                head = null;
             }
 
-            previous.setNext(previous.getNext().getNext() != null ? previous.getNext().getNext() : null);
+            size--;
+        } else {
+            var current = head;
+            PointerNode<T> previous = null;
 
+            while (previous == null && current.getNext() != null) {
+                if (current.getNext().getData().equals(data)) {
+                    previous = current;
+                } else {
+                    current = current.getNext();
+                }
+            }
+
+            if (previous != null) {
+                previous.setNext(previous.getNext().getNext());
+                size--;
+            }
         }
-
-        size--;
     }
 
     @Override
@@ -106,7 +117,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
         }
 
         if (index == 0) {
-            head = size > 1 ? head.getNext() : null;
+            head = head.getNext() != null ? head.getNext() : null;
         } else {
             var i = 0;
             var previous = head;
