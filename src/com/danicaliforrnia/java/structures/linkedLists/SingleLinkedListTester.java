@@ -7,8 +7,9 @@ public class SingleLinkedListTester {
 
         System.out.println("--------Test 1---------");
         singlyLinkedList.insert("Hello");
-        singlyLinkedList.insert("World");
         singlyLinkedList.insert("World2");
+        singlyLinkedList.insert("World3");
+        singlyLinkedList.replace("World", 1);
         singlyLinkedList.remove(2);
         System.out.println("size: " + singlyLinkedList.size());
         System.out.println(singlyLinkedList);
