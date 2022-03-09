@@ -28,7 +28,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
     @Override
     public void insert(T data, int index) {
         if (index > size - 1 || (isEmpty() && index != 0)) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(index);
         }
 
         PointerNode<T> node = new PointerNode<>(data);
@@ -59,7 +59,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
     @Override
     public void replace(T data, int index) {
         if (isEmpty()) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(index);
         }
 
         if (index == 0) {
@@ -102,7 +102,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
     @Override
     public void remove(int index) {
         if (isEmpty()) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(index);
         }
 
         if (index == 0) {
