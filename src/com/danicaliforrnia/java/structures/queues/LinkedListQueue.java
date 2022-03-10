@@ -13,6 +13,11 @@ public class LinkedListQueue<T> implements Queue<T> {
         size = 0;
     }
 
+    /**
+     * Add element to the queue. O(1)
+     *
+     * @param element: element to insert.
+     */
     @Override
     public void enqueue(T element) {
         PointerNode<T> node = new PointerNode<T>(element);
@@ -30,11 +35,21 @@ public class LinkedListQueue<T> implements Queue<T> {
         size++;
     }
 
+    /**
+     * Get first entered element from the queue. O(1)
+     *
+     * @return element's data T
+     */
     @Override
     public T peek() {
         return head.getData();
     }
 
+    /**
+     * Get and remove first entered element from the queue. O(1)
+     *
+     * @return element's data T
+     */
     @Override
     public T dequeue() {
         if (!isEmpty()) {

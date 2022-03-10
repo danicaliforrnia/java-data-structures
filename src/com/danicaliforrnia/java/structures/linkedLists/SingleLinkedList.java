@@ -32,7 +32,6 @@ public class SingleLinkedList<T> implements LinkedList<T> {
 
     /**
      * Insert at the tail or head if list is empty. O(1)
-     *
      * @param data: value to insert
      */
     @Override
@@ -54,7 +53,6 @@ public class SingleLinkedList<T> implements LinkedList<T> {
 
     /**
      * Insert at index. O(n)
-     *
      * @param data:  data to insert
      * @param index: index where insert
      */
@@ -91,7 +89,6 @@ public class SingleLinkedList<T> implements LinkedList<T> {
 
     /**
      * Replace a value at index. O(n)
-     *
      * @param data:  data to replace
      * @param index: index where replace
      */
@@ -118,7 +115,6 @@ public class SingleLinkedList<T> implements LinkedList<T> {
 
     /**
      * Remove first appearance of data. O(n)
-     *
      * @param data: data to remove
      */
     @Override
@@ -156,7 +152,6 @@ public class SingleLinkedList<T> implements LinkedList<T> {
 
     /**
      * Remove at index. O(n)
-     *
      * @param index: index where remove
      */
     @Override

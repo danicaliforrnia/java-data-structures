@@ -11,6 +11,11 @@ public class LinkedListStack<T> implements Stack<T> {
         size = 0;
     }
 
+    /**
+     * Insert last element to the stack. O(1)
+     *
+     * @param element: element to insert
+     */
     @Override
     public void push(T element) {
         PointerNode<T> node = new PointerNode<T>(element);
@@ -21,11 +26,21 @@ public class LinkedListStack<T> implements Stack<T> {
         size++;
     }
 
+    /**
+     * Get last inserted element from the stack. O(1)
+     *
+     * @return element's value T
+     */
     @Override
     public T peek() {
         return head.getData();
     }
 
+    /**
+     * Remove and return last inserted element from the stack. O(1)
+     *
+     * @return element's value T
+     */
     @Override
     public T pop() {
         if (!isEmpty()) {
