@@ -2,11 +2,11 @@ package com.danicaliforrnia.java.structures.linkedLists;
 
 import com.danicaliforrnia.java.structures.nodes.DoublePointerNode;
 
-public class DoubleLinkedList<T> implements LinkedList<T> {
+public class DoublyLinkedList<T> implements LinkedList<T> {
     private DoublePointerNode<T> head;
     private int size;
 
-    public DoubleLinkedList() {
+    public DoublyLinkedList() {
         head = null;
         size = 0;
     }

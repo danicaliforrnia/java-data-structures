@@ -2,11 +2,11 @@ package com.danicaliforrnia.java.structures.linkedLists;
 
 import com.danicaliforrnia.java.structures.nodes.PointerNode;
 
-public class SingleLinkedList<T> implements LinkedList<T> {
+public class SinglyLinkedList<T> implements LinkedList<T> {
     private PointerNode<T> head;
     private int size;
 
-    public SingleLinkedList() {
+    public SinglyLinkedList() {
         head = null;
         size = 0;
     }

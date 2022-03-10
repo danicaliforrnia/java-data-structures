@@ -1,9 +1,9 @@
 package com.danicaliforrnia.java.structures.linkedLists;
 
-public class SingleLinkedListTester {
+public class SinglyLinkedListTester {
 
     public static void main(String[] args) {
-        SingleLinkedList<String> singlyLinkedList = new SingleLinkedList<>();
+        SinglyLinkedList<String> singlyLinkedList = new SinglyLinkedList<>();
 
         System.out.println("--------Test 1: Insert---------");
         singlyLinkedList.insert("hello");
