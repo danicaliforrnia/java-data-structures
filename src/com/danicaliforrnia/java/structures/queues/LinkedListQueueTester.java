@@ -18,16 +18,27 @@ public class LinkedListQueueTester {
         System.out.println("Peek: " + linkedListQueue.peek());
 
         System.out.println("--------Test 3: Dequeue---------");
-        System.out.println("Pop: " + linkedListQueue.dequeue());
+        System.out.println("Dequeue: " + linkedListQueue.dequeue());
         System.out.println("size: " + linkedListQueue.size());
         System.out.println(linkedListQueue);
-        System.out.println("Pop: " + linkedListQueue.dequeue());
+        System.out.println("Dequeue: " + linkedListQueue.dequeue());
         System.out.println("size: " + linkedListQueue.size());
         System.out.println(linkedListQueue);
 
-        System.out.println("--------Test 2: Peek---------");
+        System.out.println("--------Test 4: Peek---------");
         System.out.println("Peek: " + linkedListQueue.peek());
         System.out.println("Peek: " + linkedListQueue.peek());
+
+        System.out.println("--------Test 5: Dequeue---------");
+        System.out.println("Dequeue: " + linkedListQueue.dequeue());
+        System.out.println("size: " + linkedListQueue.size());
+        System.out.println(linkedListQueue);
+        System.out.println("Dequeue: " + linkedListQueue.dequeue());
+        System.out.println("size: " + linkedListQueue.size());
+        System.out.println(linkedListQueue);
+        System.out.println("Dequeue: " + linkedListQueue.dequeue());
+        System.out.println("size: " + linkedListQueue.size());
+        System.out.println(linkedListQueue);
     }
 
 }

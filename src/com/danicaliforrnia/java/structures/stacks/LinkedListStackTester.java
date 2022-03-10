@@ -25,9 +25,20 @@ public class LinkedListStackTester {
         System.out.println("size: " + linkedListStack.size());
         System.out.println(linkedListStack);
 
-        System.out.println("--------Test 2: Peek---------");
+        System.out.println("--------Test 4: Peek---------");
         System.out.println("Peek: " + linkedListStack.peek());
         System.out.println("Peek: " + linkedListStack.peek());
+
+        System.out.println("--------Test 5: Dequeue---------");
+        System.out.println("Pop: " + linkedListStack.pop());
+        System.out.println("size: " + linkedListStack.size());
+        System.out.println(linkedListStack);
+        System.out.println("Pop: " + linkedListStack.pop());
+        System.out.println("size: " + linkedListStack.size());
+        System.out.println(linkedListStack);
+        System.out.println("Pop: " + linkedListStack.pop());
+        System.out.println("size: " + linkedListStack.size());
+        System.out.println(linkedListStack);
     }
 
 }
