@@ -1,35 +1,44 @@
-package com.danicaliforrnia.java.structures.stacks;
+package com.danicaliforrnia.java.structures.queues;
 
 import com.danicaliforrnia.java.structures.nodes.PointerNode;
 
-public class LinkedListStack<T> implements Stack<T> {
+public class LinkedListQueue<T> implements Queue<T> {
     private PointerNode<T> head;
+    private PointerNode<T> tail;
     private int size;
 
-    public LinkedListStack() {
+    public LinkedListQueue() {
         head = null;
+        tail = null;
         size = 0;
     }
 
     /**
-     * Insert last element to the stack. O(1)
+     * Add element to the queue. O(1)
      *
-     * @param element: element to insert
+     * @param element: element to insert.
      */
     @Override
-    public void push(T element) {
+    public void enqueue(T element) {
         PointerNode<T> node = new PointerNode<T>(element);
-        if (!isEmpty()) {
-            node.setNext(head);
+        if (isEmpty()) {
+            head = node;
+        } else {
+            if (size != 1) {
+                tail.setNext(node);
+            }
+            tail = node;
+            if (size == 1) {
+                head.setNext(tail);
+            }
         }
-        head = node;
         size++;
     }
 
     /**
-     * Get last inserted element from the stack. O(1)
+     * Get first entered element from the queue. O(1)
      *
-     * @return element's value T
+     * @return element's data T
      */
     @Override
     public T peek() {
@@ -37,12 +46,12 @@ public class LinkedListStack<T> implements Stack<T> {
     }
 
     /**
-     * Remove and return last inserted element from the stack. O(1)
+     * Get and remove first entered element from the queue. O(1)
      *
-     * @return element's value T
+     * @return element's data T
      */
     @Override
-    public T pop() {
+    public T dequeue() {
         if (!isEmpty()) {
             var node = head;
             head = head.getNext();
@@ -80,7 +89,7 @@ public class LinkedListStack<T> implements Stack<T> {
             }
             return stringBuilder.toString();
         } else {
-            return "Empty Stack";
+            return "Empty Queue";
         }
     }
 }
