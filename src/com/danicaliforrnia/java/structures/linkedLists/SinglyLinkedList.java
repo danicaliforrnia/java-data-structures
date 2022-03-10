@@ -221,7 +221,6 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
                 stringBuilder.append(current.getData());
             }
 
-
             return stringBuilder.toString();
         } else {
             return "Empty Linked List";

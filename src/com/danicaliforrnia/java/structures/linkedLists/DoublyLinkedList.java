@@ -210,7 +210,6 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
                 stringBuilder.append(current.getData());
             }
 
-
             return stringBuilder.toString();
         } else {
             return "Empty Linked List";
