@@ -1,23 +1,32 @@
-package com.danicaliforrnia.java.structures.stacks;
+package com.danicaliforrnia.java.structures.queues;
 
 import com.danicaliforrnia.java.structures.nodes.PointerNode;
 
-public class LinkedListStack<T> implements Stack<T> {
+public class LinkedListQueue<T> implements Queue<T> {
     private PointerNode<T> head;
+    private PointerNode<T> tail;
     private int size;
 
-    public LinkedListStack() {
+    public LinkedListQueue() {
         head = null;
+        tail = null;
         size = 0;
     }
 
     @Override
-    public void push(T element) {
+    public void enqueue(T element) {
         PointerNode<T> node = new PointerNode<T>(element);
-        if (!isEmpty()) {
-            node.setNext(head);
+        if (isEmpty()) {
+            head = node;
+        } else {
+            if (size != 1) {
+                tail.setNext(node);
+            }
+            tail = node;
+            if (size == 1) {
+                head.setNext(tail);
+            }
         }
-        head = node;
         size++;
     }
 
@@ -27,7 +36,7 @@ public class LinkedListStack<T> implements Stack<T> {
     }
 
     @Override
-    public T pop() {
+    public T dequeue() {
         if (!isEmpty()) {
             var node = head;
             head = head.getNext();
@@ -65,7 +74,7 @@ public class LinkedListStack<T> implements Stack<T> {
             }
             return stringBuilder.toString();
         } else {
-            return "Empty Stack";
+            return "Empty Queue";
         }
     }
 }
